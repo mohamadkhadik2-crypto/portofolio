@@ -1,11 +1,11 @@
 export type Project = {
   slug: string; title: string; tags: string[]; desc: string;
-  features?: string[]; problem?: string; github?: string;
+  features?: string[]; problem?: string; github?: string; image?: string;
 };
 // github: isi hanya jika repositori benar-benar sesuai proyek, contoh:
 // github: "https://github.com/mohamadkhadik2-crypto/uas-khadik"
 export const projects: Project[] = [
-  { slug: "sia-pirasi", title: "SIA-PIRASI", tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "PHP", "MySQL"],
+  { slug: "sia-pirasi", title: "SIA-PIRASI", image: "/projects/sia-pirasi.png", tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "PHP", "MySQL"],
     desc: "Sistem layanan pengaduan dan penyampaian aspirasi mahasiswa berbasis web dengan fitur pelacakan status dan pengelolaan admin.",
     features: ["Pengaduan dan aspirasi mahasiswa", "Pelacakan status", "Pengelolaan oleh admin"] },
   { slug: "yolov8-object-detection", title: "YOLOv8 Object Detection", tags: ["Python", "YOLOv8", "OpenCV", "PyTorch"],
