@@ -18,7 +18,7 @@ export default function MusicPlayer() {
 
   return (
     <div className="glass fixed bottom-4 right-4 z-40 flex items-center gap-3 rounded-2xl px-3 py-2 shadow-lg" role="region" aria-label="Background music">
-      <audio ref={ref} src="/audio/background-music.mp3" loop preload="none" onError={() => { setError(true); setPlaying(false); }} />
+      <audio ref={ref} src="/audio/background-music.mp3" loop preload="metadata" onError={() => { setError(true); setPlaying(false); }} />
       <button onClick={toggle} aria-label={playing ? "Pause musik" : "Putar musik"}
         className="grid h-10 w-10 place-items-center rounded-full bg-brand/25 text-white ring-1 ring-brand/50 hover:bg-brand/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky">
         {playing ? <Pause size={18} /> : <Play size={18} />}
