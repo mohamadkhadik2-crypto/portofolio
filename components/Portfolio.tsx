@@ -33,7 +33,18 @@ export default function Portfolio() {
               {shown.map((p) => (
                 <article key={p.slug} className="card flex flex-col overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/projects/${p.slug}.svg`} alt={`Ilustrasi proyek ${p.title}`} loading="lazy" className="aspect-video w-full object-cover" />
+                  <img 
+                    src={p.image || `/projects/${p.slug}.png`} 
+                    alt={`Ilustrasi proyek ${p.title}`} 
+                    loading="lazy" 
+                    className="aspect-video w-full object-cover" 
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      if (!target.src.endsWith(".jpg")) {
+                        target.src = `/projects/${p.slug}.jpg`;
+                      }
+                    }}
+                  />
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="text-lg font-bold text-white">{p.title}</h3>
                     <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">{p.desc}</p>
