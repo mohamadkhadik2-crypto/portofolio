@@ -26,12 +26,12 @@ export default function ProjectPage({ params }: Props) {
       </Link>
       <h1 className="text-3xl font-extrabold text-white sm:text-5xl">{p.title}</h1>
       <p className="mt-4 max-w-3xl text-lg text-slate-300">{p.desc}</p>
-      
+
       <div className="mt-8 overflow-hidden rounded-2xl border border-white/10">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img 
-          src={p.detailImage || p.image || `/projects/${p.slug}.png`} 
-          alt={`Ilustrasi ${p.title}`} 
+        <img
+          src={p.detailImage || p.image || `/projects/${p.slug}.png`}
+          alt={`Ilustrasi ${p.title}`}
           className="w-full rounded-2xl object-cover"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
@@ -41,7 +41,6 @@ export default function ProjectPage({ params }: Props) {
           }}
         />
       </div>
-      <p className="mt-2 text-xs text-slate-500">Tangkapan layar / Ilustrasi proyek {p.title}.</p>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         <section className="card p-6">
@@ -77,6 +76,7 @@ export default function ProjectPage({ params }: Props) {
           </ul>
         </section>
       </div>
+
       {p.github && (
         <a href={p.github} target="_blank" rel="noopener noreferrer" className="btn-primary mt-8 inline-flex items-center gap-2">
           <Github size={16} /> Lihat di GitHub
